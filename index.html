@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>eNight</title>
+        <script src="hollydates.js"></script>
+        <script>
+            
+/*function thanksgiving(theyear) {
+  const lastOfNov = new Date(theyear, 10, 30).getDay();
+  const turkyDay = (lastOfNov >= 4 ? 34 : 27) - lastOfNov;
+  return `10.${turkyDay}`;
+}*/
+
+/*
+
+function getThursdayOfCurrentWeek() {
+  const today = new Date();
+  const first = today.getDate() - today.getDay() + 1;
+  const fourth = first + 3;
+  const saturday = new Date(today.setDate(sixth));
+  return saturday;
+}
+
+*/
+
+var h = HollyDates();
+
+//get date
+const d = new Date();
+//is today Thursday?
+if (d.getDay() == 4) {
+  document.getElementById("thurs_status").innerHTML = "✔️";
+  document.getElementById("status").innerHTML = "Electronics Night TONIGHT! 6-8p";
+} else {
+   document.getElementById("thurs_status").innerHTML = "❌";
+}
+
+
+
+
+
+//is today Thanksgiving?
+if (d.getDay() == 4 && d.getMonth() == 11 && d.getDate() >= 22 && d.getDate() <= 28  ){
+    document.getElementById("thanks_status").innerHTML = "good chance ✔️";
+    document.getElementById("status").innerHTML = "No Electronics Night tonight!";
+}
+else {
+    document.getElementById("thanks_status").innerHTML = "❌";
+};
+</script>
+    </head>
+    <body>
+        <h1>Electronics Night</h1>
+        <p>Every Thursday but Thanksgiving.</p>
+        <ul>
+            <li>is today Thursday?<span id="thurs_status">✔️</span></li>
+            <li>is this Thursday Thanksgiving? <span id="thanks_status">❌</span></li>
+            <li>The next instance of Electronics Night will be spun up on <span id="next_enight">Thursday.</span></li>
+        </ul>
+        <h2 id="status"></h2>
+    </body>
+</html>
+
+
+
