@@ -4,23 +4,9 @@
         <script src="hollydates.js"></script>
         <script>
             
-/*function thanksgiving(theyear) {
-  const lastOfNov = new Date(theyear, 10, 30).getDay();
-  const turkyDay = (lastOfNov >= 4 ? 34 : 27) - lastOfNov;
-  return `10.${turkyDay}`;
-}*/
+window.addEventListener('load', function() {
+    // your code here
 
-/*
-
-function getThursdayOfCurrentWeek() {
-  const today = new Date();
-  const first = today.getDate() - today.getDay() + 1;
-  const fourth = first + 3;
-  const saturday = new Date(today.setDate(sixth));
-  return saturday;
-}
-
-*/
 
 var h = HollyDates();
 
@@ -32,11 +18,8 @@ if (d.getDay() == 4) {
   document.getElementById("status").innerHTML = "Electronics Night TONIGHT! 6-8p";
 } else {
    document.getElementById("thurs_status").innerHTML = "❌";
+   document.getElementById("status").innerHTML = "Not tonight.";
 }
-
-
-
-
 
 //is today Thanksgiving?
 if (d.getDay() == 4 && d.getMonth() == 11 && d.getDate() >= 22 && d.getDate() <= 28  ){
@@ -46,6 +29,7 @@ if (d.getDay() == 4 && d.getMonth() == 11 && d.getDate() >= 22 && d.getDate() <=
 else {
     document.getElementById("thanks_status").innerHTML = "❌";
 };
+});
 </script>
     </head>
     <body>
@@ -54,9 +38,17 @@ else {
         <ul>
             <li>is today Thursday?<span id="thurs_status">✔️</span></li>
             <li>is this Thursday Thanksgiving? <span id="thanks_status">❌</span></li>
-            <li>The next instance of Electronics Night will be spun up on <span id="next_enight">Thursday.</span></li>
+            <li>The next instance of Electronics Night will be spun up on <span id="next_enight">Thursday. ✔️</span></li>
         </ul>
         <h2 id="status"></h2>
+        <p></p>
+        <h3>What the heck is Electronics Night?</h3>
+        <p>Electronics Night is a weekly meetup of makers, hackers, artists, and engineers interested in all things technology. The group meets at Spark Makerspace at 7 Union St in New London from 6-8pm.</p>
+        <p>Bring something to show off or just stop by to see what others are working on.</p>
+        <p>Areas of interest include electronics, circuit and PCB design, 3D printing, electronic art, game design, web design, systems administration, reverse-engineering, and more.</p>
+        <p>Questions? Email electronics at sparkmakerspace.org or swing by.</p>
+        <h4>I'm a regular at Electronics Night and I think you've missed something here!</h4>
+        <p>This site is automagically generated from the <a href="https://github.com/SparkMakerspace/electronicsnight.com">SparkMakerspace/electronicsnight.com</a> repository on GitHub. Pull requests and issues will be reviewed happily.</p>
     </body>
 </html>
 
