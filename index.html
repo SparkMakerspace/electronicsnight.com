@@ -1,30 +1,30 @@
 <html>
     <head>
         <title>eNight</title>
-        <script src="hollydates.js"></script>
         <script>
             
 window.addEventListener('load', function() {
     // your code here
 
-
-var h = HollyDates();
-
 //get date
+console.log("script running!");
 const d = new Date();
+console.log(d);
 //is today Thursday?
 if (d.getDay() == 4) {
+  console.log("today is thursday");
   document.getElementById("thurs_status").innerHTML = "✔️";
   document.getElementById("status").innerHTML = "Electronics Night TONIGHT! 6-8p";
 } else {
    document.getElementById("thurs_status").innerHTML = "❌";
    document.getElementById("status").innerHTML = "Not tonight.";
 }
-
-//is today Thanksgiving?
-if (d.getDay() == 4 && d.getMonth() == 11 && d.getDate() >= 22 && d.getDate() <= 28  ){
+console.log(d.getMonth());
+//is today Thanksgiving? Use 10 because arrays start at 0. Also 21 and 27 for same reason.
+if (d.getDay() == 4 && d.getMonth() == 10 && d.getDate() >= 21 && d.getDate() <= 27  ){
+//    console.log("today is thanksgiving (probably?)");
     document.getElementById("thanks_status").innerHTML = "good chance ✔️";
-    document.getElementById("status").innerHTML = "No Electronics Night tonight!";
+    document.getElementById("status").innerHTML = "No Electronics Night tonight! See you next week!";
 }
 else {
     document.getElementById("thanks_status").innerHTML = "❌";
@@ -36,7 +36,7 @@ else {
         <h1>Electronics Night</h1>
         <p>Every Thursday but Thanksgiving.</p>
         <ul>
-            <li>is today Thursday?<span id="thurs_status">✔️</span></li>
+            <li>is today Thursday?<span id="thurs_status">❌</span></li>
             <li>is this Thursday Thanksgiving? <span id="thanks_status">❌</span></li>
             <li>The next instance of Electronics Night will be spun up on <span id="next_enight">Thursday. ✔️</span></li>
         </ul>
