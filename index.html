@@ -21,15 +21,15 @@ if (d.getDay() == 4) {
 }
 console.log(d.getMonth());
 //is this Thursday Thanksgiving?
-if (d.getDay() <= 4 && d.getMonth() == 10 && d.getDate() >= 20 && d.getDate() <= 27  ){
-//    console.log("thanksgiving is this week (probably?)");
-    document.getElementById("thanks_status").innerHTML = "good chance ✔️";
-    document.getElementById("next_enight").innerHTML = "next week ❌";
+if (d.getDay() < 4 && d.getMonth() == 10 && d.getDate() >= 20 && d.getDate() <= 27  ){
+    console.log("thanksgiving is this week (probably?)");
+    document.getElementById("thanks_status").innerHTML = "yes! 🦃";
+    document.getElementById("next_enight").innerHTML = "<strong>next week ❌</strong>";
     document.getElementById("status").innerHTML = "No Electronics Night this week! See you next week!";
 }
 //is today Thanksgiving? Use 10 because arrays start at 0. Also 20 and 27 for same reason.
-if (d.getDay() == 4 && d.getMonth() == 10 && d.getDate() >= 20 && d.getDate() <= 27  ){
-//    console.log("today is thanksgiving (probably?)");
+else if (d.getDay() == 4 && d.getMonth() == 10 && d.getDate() >= 20 && d.getDate() <= 27  ){
+    console.log("today is thanksgiving (probably?)");
     document.getElementById("thanks_status").innerHTML = "good chance ✔️";
     document.getElementById("status").innerHTML = "No Electronics Night tonight! See you next week!";
 }
@@ -45,7 +45,7 @@ else {
         <ul>
             <li>is today Thursday?<span id="thurs_status">❌</span></li>
             <li>is this Thursday Thanksgiving? <span id="thanks_status">❌</span></li>
-            <li>The next instance of Electronics Night will be spun up <span id="next_enight">on Thursday. ✔️</span></li>
+            <li>The next instance of Electronics Night will be <span id="next_enight">on Thursday. ✔️</span></li>
         </ul>
         <h2 id="status"></h2>
         <p></p>
