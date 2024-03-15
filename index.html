@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="language" content="English">
         <meta name="author" content="Spark Electronics Lab">
+        <link rel="stylesheet" type="text/css" href="simple.min.css">
 
         <script>
             
@@ -31,18 +32,18 @@ console.log(d.getMonth());
 //is this Thursday Thanksgiving?
 if (d.getDay() < 4 && d.getMonth() == 10 && d.getDate() >= 20 && d.getDate() <= 27  ){
     console.log("thanksgiving is this week (probably?)");
-    document.getElementById("thanks_status").innerHTML = "yes! 🦃";
-    document.getElementById("next_enight").innerHTML = "<strong>next week ❌</strong>";
-    document.getElementById("status").innerHTML = "No Electronics Night this week! See you next week!";
+    document.getElementById("thanks_status").innerHTML = "❌🦃🍂";
+    document.getElementById("next_enight").innerHTML = "<strong>next week!</strong>";
+    document.getElementById("status").innerHTML = "Turkey Day this week! See you next week!";
 }
 //is today Thanksgiving? Use 10 because arrays start at 0. Also 20 and 27 for same reason.
 else if (d.getDay() == 4 && d.getMonth() == 10 && d.getDate() >= 20 && d.getDate() <= 27  ){
     console.log("today is thanksgiving (probably?)");
-    document.getElementById("thanks_status").innerHTML = "good chance ✔️";
+    document.getElementById("thanks_status").innerHTML = "good chance it's 🦃🍂";
     document.getElementById("status").innerHTML = "No Electronics Night tonight! See you next week!";
 }
 else {
-    document.getElementById("thanks_status").innerHTML = "❌";
+    document.getElementById("thanks_status").innerHTML = "✔️";
 };
 });
 </script>
@@ -51,9 +52,9 @@ else {
         <h1>Electronics Night</h1>
         <p>Every Thursday but Thanksgiving.</p>
         <ul>
-            <li>is today Thursday?<span id="thurs_status">❌</span></li>
-            <li>is this Thursday Thanksgiving? <span id="thanks_status">❌</span></li>
-            <li>The next instance of Electronics Night will be <span id="next_enight">on Thursday. ✔️</span></li>
+            <li>Today is Thursday?<span id="thurs_status">❌</span></li>
+            <li>Thanksgiving isn't this week? <span id="thanks_status">❌</span></li>
+            <li>The next Electronics Night will be <span id="next_enight">on Thursday. ✔️</span></li>
         </ul>
         <h2 id="status"></h2>
         <p></p>
